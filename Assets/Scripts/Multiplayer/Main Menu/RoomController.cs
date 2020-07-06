@@ -56,13 +56,17 @@ public class RoomController : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsMasterClient)
         {
             _startGameButton.SetActive(true);
+            GlobalSettings.SetPlayerId(true);
         } else
         {
             _startGameButton.SetActive(false);
+            GlobalSettings.SetPlayerId(false);
         }
 
         ClearPlayerList();
         ListPlayers();
+
+        Debug.Log("You are player " + GlobalSettings.GetPlayerId());
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -81,12 +85,13 @@ public class RoomController : MonoBehaviourPunCallbacks
         }
     }
 
-    public void startGame()
+    public void StartGame()
     {
         if (PhotonNetwork.IsMasterClient)
         {
-            PhotonNetwork.CurrentRoom.IsOpen = false;
-            PhotonNetwork.LoadLevel(_multiplayerSceneIndex);
+            //PhotonNetwork.CurrentRoom.IsOpen = false;
+            GlobalSettings.InitGame();
+            //PhotonNetwork.LoadLevel(_multiplayerSceneIndex);
         }
     }
 

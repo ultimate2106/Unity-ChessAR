@@ -18,8 +18,6 @@ public class SetupGame : MonoBehaviour
     {
         Debug.Log("Creating Player..");
         GameObject player = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PhotonPlayer"), Vector3.zero, Quaternion.identity);
-        player.transform.SetParent(_chessBoard.transform);
-        player.transform.localPosition = new Vector3(0, 0, 0.075f);
     }
 
     // Update is called once per frame
