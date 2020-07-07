@@ -6,6 +6,7 @@ public class FigureManager : MonoBehaviour
     public void OnFigureMoved(Vector3 newPosition)
     {
         PhotonView view = gameObject.GetComponent<PhotonView>();
+        view.RPC("MoveFigureToNewPosition", RpcTarget.Others, newPosition);
     }
 
     [PunRPC]
