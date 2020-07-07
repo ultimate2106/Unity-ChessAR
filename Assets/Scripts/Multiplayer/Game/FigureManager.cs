@@ -8,14 +8,15 @@ public class FigureManager : MonoBehaviour
     {
         Debug.Log("OnFigureMoved called..");
         PhotonView view = gameObject.GetComponent<PhotonView>();
-        Vector3 position = gameObject.transform.localPosition;
+        Vector3 position = gameObject.transform.position;
+        //Vector3 position = gameObject.transform.localPosition;
         view.RPC("MoveFigureToNewPosition", RpcTarget.Others, position);
     }
 
     [PunRPC]
     public void MoveFigureToNewPosition(Vector3 newPosition)
     {
-        Debug.Log("MoveFigureToNewPosition called..");
+        Debug.Log("New position: " + newPosition.x + ", " + newPosition.y);
         gameObject.transform.position = newPosition;
     }
 }
