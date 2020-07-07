@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class LockZ : MonoBehaviour
 {
-    float zAxisStart;
+    float _zAxisStart;
     // Start is called before the first frame update
     void Start()
     {
-        zAxisStart = transform.localPosition.z;
+        _zAxisStart = transform.localPosition.z;
     }
 
     // Update is called once per frame
@@ -16,6 +16,6 @@ public class LockZ : MonoBehaviour
     {
         float currentX = transform.localPosition.x;
         float currentY = transform.localPosition.y;
-        transform.localPosition = new Vector3(currentX, currentY, zAxisStart);
+        transform.localPosition = new Vector3(currentX, currentY, _zAxisStart);
     }
 }

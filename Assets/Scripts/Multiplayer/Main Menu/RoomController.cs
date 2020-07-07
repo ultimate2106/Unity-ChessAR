@@ -89,9 +89,9 @@ public class RoomController : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.IsMasterClient)
         {
-            //PhotonNetwork.CurrentRoom.IsOpen = false;
+            PhotonNetwork.CurrentRoom.IsOpen = false;
             GlobalSettings.InitGame();
-            //PhotonNetwork.LoadLevel(_multiplayerSceneIndex);
+            PhotonNetwork.LoadLevel(_multiplayerSceneIndex);
         }
     }
 
