@@ -856,6 +856,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9133bd947e99cf643ac1dbd22e3f7123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!21 &335808358
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'VuforiaQRMaterial
+
+    37402'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: b6ebbb19f94a4041aa13b08ea90c2143, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!1 &349968169
 GameObject:
   m_ObjectHideFlags: 0
@@ -1955,34 +1983,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9133bd947e99cf643ac1dbd22e3f7123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!21 &646515354
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'VuforiaQRMaterial
-
-    28342'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b6ebbb19f94a4041aa13b08ea90c2143, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!1 &653466106 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1536104987182252, guid: 55350a888e04c4e80aaa2960bea7e3c0,
@@ -4745,7 +4745,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 646515354}
+  - {fileID: 335808358}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6137,6 +6137,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2771640314217029891, guid: 24c14a083ee7a994892e8dd251bf36e5,
+        type: 3}
+      propertyPath: _whiteFigures
+      value: 
+      objectReference: {fileID: 349968169}
+    - target: {fileID: 2771640314217029891, guid: 24c14a083ee7a994892e8dd251bf36e5,
+        type: 3}
+      propertyPath: _blackFigures
+      value: 
+      objectReference: {fileID: 506426894}
     - target: {fileID: 2771640314217029895, guid: 24c14a083ee7a994892e8dd251bf36e5,
         type: 3}
       propertyPath: m_Name
