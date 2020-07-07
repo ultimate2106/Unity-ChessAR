@@ -2,6 +2,7 @@
 using Photon.Realtime;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class GameManager : MonoBehaviour
     private GameObject _whiteFigures;
     [SerializeField]
     private GameObject _blackFigures;
+
+    [SerializeField]
+    private Text _yourColorText;
 
     private GameObject player;
 
@@ -29,7 +33,10 @@ public class GameManager : MonoBehaviour
     {
         if(GlobalSettings.GetPlayerId() != 0)
         {
+            Debug.Log("Manage wird aufgerufen..");
             ChessFiguresColor myColor = GlobalSettings.GetPlayerColor();
+            _yourColorText.text = "Deine Farbe: " + myColor.ToString();
+
             if (myColor == ChessFiguresColor.White)
             {
                 PhotonView[] figureViews = _whiteFigures.GetComponentsInChildren<PhotonView>();
@@ -45,6 +52,7 @@ public class GameManager : MonoBehaviour
     //TODO: Eventuell lieber ein RequestOwnership
     private void GetOwnership(PhotonView[] figureViews)
     {
+        Debug.Log("Get Ownership");
         PhotonView playerView = player.GetComponent<PhotonView>();
         foreach (PhotonView view in figureViews)
         {
