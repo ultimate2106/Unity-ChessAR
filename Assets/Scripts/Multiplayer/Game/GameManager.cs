@@ -11,9 +11,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject _blackFigures;
 
-    [SerializeField]
-    private Text _yourColorText;
-
     private GameObject player;
 
     // Start is called before the first frame update
@@ -35,7 +32,6 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Manage wird aufgerufen..");
             ChessFiguresColor myColor = GlobalSettings.GetPlayerColor();
-            _yourColorText.text = "Deine Farbe: " + myColor.ToString();
 
             if (myColor == ChessFiguresColor.White)
             {
@@ -58,11 +54,5 @@ public class GameManager : MonoBehaviour
         {
             view.TransferOwnership(playerView.Owner);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
