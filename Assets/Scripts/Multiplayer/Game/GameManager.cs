@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
 
     public bool IsMyTurn()
     {
+        Debug.LogWarning("PlayerColor: " + GlobalSettings.GetPlayerColor() + ", " + _whoseTurn);
         return GlobalSettings.GetPlayerColor() == _whoseTurn;
     }
 

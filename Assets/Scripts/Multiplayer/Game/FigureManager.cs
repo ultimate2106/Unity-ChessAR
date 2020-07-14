@@ -9,13 +9,14 @@ public class FigureManager : MonoBehaviour
     [SerializeField]
     private LeanSelectable _selectable;
 
-    private PhotonView view;
+    private PhotonView _view;
 
     private float _zAxisStart;
 
     // Start is called before the first frame update
     void Start()
     {
+        _view = gameObject.GetComponent<PhotonView>();
         _zAxisStart = transform.localPosition.z;
     }
 
@@ -31,8 +32,7 @@ public class FigureManager : MonoBehaviour
     {
         Debug.Log("OnFigureMoved called..");
         Vector3 position = gameObject.transform.position;
-        view = gameObject.GetComponent<PhotonView>();
-        view.RPC("MoveFigureToNewPosition", RpcTarget.Others, position);
+        _view.RPC("MoveFigureToNewPosition", RpcTarget.Others, position);
     }
 
     // Test if private is possible
@@ -45,7 +45,7 @@ public class FigureManager : MonoBehaviour
 
     public void OnFigureSelect(LeanFinger finger)
     {
-        if (!_gameManager.IsMyTurn() || !view.IsMine)
+        if (!_gameManager.IsMyTurn() || !_view.IsMine)
         {
             _selectable.Deselect();
         }
