@@ -30,9 +30,12 @@ public class FigureManager : MonoBehaviour
 
     public void OnFigureMoved(LeanFinger leanFinger)
     {
-        Debug.Log("OnFigureMoved called..");
-        Vector3 position = gameObject.transform.position;
-        _view.RPC("MoveFigureToNewPosition", RpcTarget.Others, position);
+        if (IsActionAllowed())
+        {
+            Debug.Log("OnFigureMoved called..");
+            Vector3 position = gameObject.transform.position;
+            _view.RPC("MoveFigureToNewPosition", RpcTarget.Others, position);
+        }
     }
 
     // Test if private is possible
@@ -41,13 +44,19 @@ public class FigureManager : MonoBehaviour
     {
         Debug.Log("New position: " + newPosition.x + ", " + newPosition.y);
         gameObject.transform.position = newPosition;
+        _gameManager.EndTurn();
     }
 
     public void OnFigureSelect(LeanFinger finger)
     {
-        if (!_gameManager.IsMyTurn() || !_view.IsMine)
+        if (IsActionAllowed())
         {
             _selectable.Deselect();
         }
+    }
+
+    public bool IsActionAllowed()
+    {
+        return (!_gameManager.IsMyTurn() || !_view.IsMine);
     }
 }

@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject _blackFigures;
 
-    private GameObject player;
+    private GameObject _player;
 
     private ChessFiguresColor _whoseTurn = ChessFiguresColor.White;
 
@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     private void CreatePlayer()
     {
         Debug.Log("Creating Player..");
-        player = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PhotonPlayer"), Vector3.zero, Quaternion.identity);
+        _player = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PhotonPlayer"), Vector3.zero, Quaternion.identity);
     }
 
     private void ManageOwnership()
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
     private void GetOwnership(PhotonView[] figureViews)
     {
         Debug.Log("Get Ownership of " + GlobalSettings.GetPlayerColor() + "..");
-        PhotonView playerView = player.GetComponent<PhotonView>();
+        PhotonView playerView = _player.GetComponent<PhotonView>();
         foreach (PhotonView view in figureViews)
         {
             view.TransferOwnership(playerView.Owner);
@@ -68,5 +68,18 @@ public class GameManager : MonoBehaviour
     public ChessFiguresColor GetActivePlayer()
     {
         return _whoseTurn;
+    }
+
+    public void EndTurn()
+    {
+        switch (_whoseTurn)
+        {
+            case ChessFiguresColor.White:
+                _whoseTurn = ChessFiguresColor.Black;
+                break;
+            case ChessFiguresColor.Black:
+                _whoseTurn = ChessFiguresColor.White;
+                break;
+        }
     }
 }
