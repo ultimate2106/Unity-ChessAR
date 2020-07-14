@@ -1,4 +1,5 @@
-﻿using Photon.Pun;
+﻿using Lean.Touch;
+using Photon.Pun;
 using Photon.Realtime;
 using System.IO;
 using UnityEngine;
@@ -13,9 +14,12 @@ public class GameManager : MonoBehaviour
 
     private GameObject player;
 
+    private ChessFiguresColor _whoseTurn = ChessFiguresColor.White;
+
     // Start is called before the first frame update
     void Start()
     {
+        // Init game..
         CreatePlayer();
         ManageOwnership();
     }
@@ -30,7 +34,6 @@ public class GameManager : MonoBehaviour
     {
         if(GlobalSettings.GetPlayerId() != 0)
         {
-            Debug.Log("Manage wird aufgerufen..");
             ChessFiguresColor myColor = GlobalSettings.GetPlayerColor();
 
             if (myColor == ChessFiguresColor.White)
@@ -48,11 +51,21 @@ public class GameManager : MonoBehaviour
     //TODO: Eventuell lieber ein RequestOwnership
     private void GetOwnership(PhotonView[] figureViews)
     {
-        Debug.Log("Get Ownership");
+        Debug.Log("Get Ownership of " + GlobalSettings.GetPlayerColor() + "..");
         PhotonView playerView = player.GetComponent<PhotonView>();
         foreach (PhotonView view in figureViews)
         {
             view.TransferOwnership(playerView.Owner);
         }
+    }
+
+    public bool IsMyTurn()
+    {
+        return GlobalSettings.GetPlayerColor() == _whoseTurn;
+    }
+
+    public ChessFiguresColor GetActivePlayer()
+    {
+        return _whoseTurn;
     }
 }
