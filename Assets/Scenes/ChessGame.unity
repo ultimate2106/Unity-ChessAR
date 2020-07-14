@@ -257,18 +257,6 @@ MonoBehaviour:
   viewIdField: 14
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &55806070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 55806068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b0a9400c92ca104b97be714578dc522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &55806071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +274,18 @@ MonoBehaviour:
   IsolateSelectingFingers: 1
   onSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 55806075}
+        m_MethodName: OnFigureSelect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onSelectSet:
     m_PersistentCalls:
       m_Calls: []
@@ -395,8 +394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9133bd947e99cf643ac1dbd22e3f7123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManager: {fileID: 0}
-  _selectable: {fileID: 0}
+  _gameManager: {fileID: 1795670604}
+  _selectable: {fileID: 55806071}
 --- !u!1001 &97074300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -524,7 +523,18 @@ MonoBehaviour:
   IsolateSelectingFingers: 1
   onSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 97074309}
+        m_MethodName: OnFigureSelect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onSelectSet:
     m_PersistentCalls:
       m_Calls: []
@@ -546,18 +556,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isSelected: 0
---- !u!114 &97074305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 97074301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b0a9400c92ca104b97be714578dc522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &97074306 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4485704448486532, guid: 6653ddcbd4a2e453ba6e07f8931ce86c,
@@ -638,8 +636,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9133bd947e99cf643ac1dbd22e3f7123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManager: {fileID: 0}
-  _selectable: {fileID: 0}
+  _gameManager: {fileID: 1795670604}
+  _selectable: {fileID: 97074304}
 --- !u!1 &150106447 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1536104987182252, guid: 55350a888e04c4e80aaa2960bea7e3c0,
@@ -807,18 +805,6 @@ MonoBehaviour:
   viewIdField: 16
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &240862023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240862021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b0a9400c92ca104b97be714578dc522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &240862024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -836,7 +822,18 @@ MonoBehaviour:
   IsolateSelectingFingers: 1
   onSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 240862028}
+        m_MethodName: OnFigureSelect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onSelectSet:
     m_PersistentCalls:
       m_Calls: []
@@ -945,8 +942,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9133bd947e99cf643ac1dbd22e3f7123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManager: {fileID: 0}
-  _selectable: {fileID: 0}
+  _gameManager: {fileID: 1795670604}
+  _selectable: {fileID: 240862024}
 --- !u!1 &349968169
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,6 +953,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 349968170}
+  - component: {fileID: 349968171}
   m_Layer: 0
   m_Name: WhitePlayer
   m_TagString: Untagged
@@ -993,6 +991,18 @@ Transform:
   m_Father: {fileID: 4846723658842055}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &349968171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349968169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b0a9400c92ca104b97be714578dc522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &439833650
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1470,7 +1480,18 @@ MonoBehaviour:
   IsolateSelectingFingers: 1
   onSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 533831401}
+        m_MethodName: OnFigureSelect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onSelectSet:
     m_PersistentCalls:
       m_Calls: []
@@ -1492,18 +1513,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isSelected: 0
---- !u!114 &533831397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 533831393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b0a9400c92ca104b97be714578dc522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &533831398 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4485704448486532, guid: 6653ddcbd4a2e453ba6e07f8931ce86c,
@@ -1584,8 +1593,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9133bd947e99cf643ac1dbd22e3f7123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManager: {fileID: 0}
-  _selectable: {fileID: 0}
+  _gameManager: {fileID: 1795670604}
+  _selectable: {fileID: 533831396}
 --- !u!1 &548045350 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1031636751254628, guid: 7302be28962c243678252e7c6255fdbc,
@@ -2004,18 +2013,6 @@ MonoBehaviour:
   viewIdField: 12
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &572365950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 572365948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b0a9400c92ca104b97be714578dc522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &572365951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2033,7 +2030,18 @@ MonoBehaviour:
   IsolateSelectingFingers: 1
   onSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 572365955}
+        m_MethodName: OnFigureSelect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onSelectSet:
     m_PersistentCalls:
       m_Calls: []
@@ -2142,8 +2150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9133bd947e99cf643ac1dbd22e3f7123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManager: {fileID: 0}
-  _selectable: {fileID: 0}
+  _gameManager: {fileID: 1795670604}
+  _selectable: {fileID: 572365951}
 --- !u!1 &653466106 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1536104987182252, guid: 55350a888e04c4e80aaa2960bea7e3c0,
@@ -2172,18 +2180,6 @@ MonoBehaviour:
   viewIdField: 11
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &653466108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 653466106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b0a9400c92ca104b97be714578dc522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &653466109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2201,7 +2197,18 @@ MonoBehaviour:
   IsolateSelectingFingers: 1
   onSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 653466113}
+        m_MethodName: OnFigureSelect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onSelectSet:
     m_PersistentCalls:
       m_Calls: []
@@ -2310,8 +2317,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9133bd947e99cf643ac1dbd22e3f7123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManager: {fileID: 0}
-  _selectable: {fileID: 0}
+  _gameManager: {fileID: 1795670604}
+  _selectable: {fileID: 653466109}
 --- !u!1 &655633156 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1536104987182252, guid: 55350a888e04c4e80aaa2960bea7e3c0,
@@ -2340,18 +2347,6 @@ MonoBehaviour:
   viewIdField: 10
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &655633158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655633156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b0a9400c92ca104b97be714578dc522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &655633159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2369,7 +2364,18 @@ MonoBehaviour:
   IsolateSelectingFingers: 1
   onSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 655633163}
+        m_MethodName: OnFigureSelect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onSelectSet:
     m_PersistentCalls:
       m_Calls: []
@@ -2478,8 +2484,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9133bd947e99cf643ac1dbd22e3f7123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManager: {fileID: 0}
-  _selectable: {fileID: 0}
+  _gameManager: {fileID: 1795670604}
+  _selectable: {fileID: 655633159}
 --- !u!1001 &689835002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3491,18 +3497,6 @@ MonoBehaviour:
   viewIdField: 9
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &1032001963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032001961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b0a9400c92ca104b97be714578dc522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1032001964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3520,7 +3514,18 @@ MonoBehaviour:
   IsolateSelectingFingers: 1
   onSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1032001968}
+        m_MethodName: OnFigureSelect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onSelectSet:
     m_PersistentCalls:
       m_Calls: []
@@ -3629,8 +3634,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9133bd947e99cf643ac1dbd22e3f7123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManager: {fileID: 0}
-  _selectable: {fileID: 0}
+  _gameManager: {fileID: 1795670604}
+  _selectable: {fileID: 1032001964}
 --- !u!1 &1190109955 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1031636751254628, guid: 7302be28962c243678252e7c6255fdbc,
@@ -5011,7 +5016,18 @@ MonoBehaviour:
   IsolateSelectingFingers: 1
   onSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1583691891}
+        m_MethodName: OnFigureSelect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onSelectSet:
     m_PersistentCalls:
       m_Calls: []
@@ -5033,18 +5049,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isSelected: 0
---- !u!114 &1583691887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1583691883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b0a9400c92ca104b97be714578dc522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1583691888 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4485704448486532, guid: 6653ddcbd4a2e453ba6e07f8931ce86c,
@@ -5125,8 +5129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9133bd947e99cf643ac1dbd22e3f7123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManager: {fileID: 0}
-  _selectable: {fileID: 0}
+  _gameManager: {fileID: 1795670604}
+  _selectable: {fileID: 1583691886}
 --- !u!1 &1590846606 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1536104987182252, guid: 55350a888e04c4e80aaa2960bea7e3c0,
@@ -5560,18 +5564,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isSelected: 0
---- !u!114 &1616019388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1616019384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b0a9400c92ca104b97be714578dc522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1616019389 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4485704448486532, guid: 6653ddcbd4a2e453ba6e07f8931ce86c,
@@ -6179,7 +6171,18 @@ MonoBehaviour:
   IsolateSelectingFingers: 1
   onSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1682581959}
+        m_MethodName: OnFigureSelect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onSelectSet:
     m_PersistentCalls:
       m_Calls: []
@@ -6201,18 +6204,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isSelected: 0
---- !u!114 &1682581955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1682581951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b0a9400c92ca104b97be714578dc522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1682581956 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4485704448486532, guid: 6653ddcbd4a2e453ba6e07f8931ce86c,
@@ -6293,8 +6284,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9133bd947e99cf643ac1dbd22e3f7123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManager: {fileID: 0}
-  _selectable: {fileID: 0}
+  _gameManager: {fileID: 1795670604}
+  _selectable: {fileID: 1682581954}
 --- !u!1 &1757058880 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1031636751254628, guid: 7302be28962c243678252e7c6255fdbc,
@@ -6824,7 +6815,18 @@ MonoBehaviour:
   IsolateSelectingFingers: 1
   onSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1823169103}
+        m_MethodName: OnFigureSelect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onSelectSet:
     m_PersistentCalls:
       m_Calls: []
@@ -6846,18 +6848,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isSelected: 0
---- !u!114 &1823169099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823169095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b0a9400c92ca104b97be714578dc522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1823169100 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4485704448486532, guid: 6653ddcbd4a2e453ba6e07f8931ce86c,
@@ -6938,8 +6928,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9133bd947e99cf643ac1dbd22e3f7123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManager: {fileID: 0}
-  _selectable: {fileID: 0}
+  _gameManager: {fileID: 1795670604}
+  _selectable: {fileID: 1823169098}
 --- !u!1001 &1848027835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7193,18 +7183,6 @@ MonoBehaviour:
   viewIdField: 4
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &1936298169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1936298167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b0a9400c92ca104b97be714578dc522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1936298170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7222,7 +7200,18 @@ MonoBehaviour:
   IsolateSelectingFingers: 1
   onSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1936298174}
+        m_MethodName: OnFigureSelect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onSelectSet:
     m_PersistentCalls:
       m_Calls: []
@@ -7331,8 +7320,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9133bd947e99cf643ac1dbd22e3f7123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManager: {fileID: 0}
-  _selectable: {fileID: 0}
+  _gameManager: {fileID: 1795670604}
+  _selectable: {fileID: 1936298170}
 --- !u!1001 &1967845804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7460,7 +7449,18 @@ MonoBehaviour:
   IsolateSelectingFingers: 1
   onSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1967845813}
+        m_MethodName: OnFigureSelect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onSelectSet:
     m_PersistentCalls:
       m_Calls: []
@@ -7482,18 +7482,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isSelected: 0
---- !u!114 &1967845809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967845805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b0a9400c92ca104b97be714578dc522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1967845810 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4485704448486532, guid: 6653ddcbd4a2e453ba6e07f8931ce86c,
@@ -7574,8 +7562,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9133bd947e99cf643ac1dbd22e3f7123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManager: {fileID: 0}
-  _selectable: {fileID: 0}
+  _gameManager: {fileID: 1795670604}
+  _selectable: {fileID: 1967845808}
 --- !u!1001 &2024916267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7679,18 +7667,6 @@ MonoBehaviour:
   viewIdField: 2
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &2116588221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2116588219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b0a9400c92ca104b97be714578dc522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2116588222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7708,7 +7684,18 @@ MonoBehaviour:
   IsolateSelectingFingers: 1
   onSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2116588226}
+        m_MethodName: OnFigureSelect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onSelectSet:
     m_PersistentCalls:
       m_Calls: []
@@ -7817,8 +7804,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9133bd947e99cf643ac1dbd22e3f7123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManager: {fileID: 0}
-  _selectable: {fileID: 0}
+  _gameManager: {fileID: 1795670604}
+  _selectable: {fileID: 2116588222}
 --- !u!1001 &2121956060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8245,7 +8232,18 @@ MonoBehaviour:
   IsolateSelectingFingers: 1
   onSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2143771037}
+        m_MethodName: OnFigureSelect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onSelectSet:
     m_PersistentCalls:
       m_Calls: []
@@ -8253,7 +8251,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2143771037}
-        m_MethodName: 
+        m_MethodName: OnFigureMoved
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8267,18 +8265,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isSelected: 0
---- !u!114 &2143771033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143771029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b0a9400c92ca104b97be714578dc522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2143771034 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4485704448486532, guid: 6653ddcbd4a2e453ba6e07f8931ce86c,
@@ -8359,8 +8345,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9133bd947e99cf643ac1dbd22e3f7123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManager: {fileID: 0}
-  _selectable: {fileID: 0}
+  _gameManager: {fileID: 1795670604}
+  _selectable: {fileID: 2143771032}
 --- !u!1 &1595888009350745
 GameObject:
   m_ObjectHideFlags: 0

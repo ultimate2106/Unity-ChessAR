@@ -11,6 +11,22 @@ public class FigureManager : MonoBehaviour
 
     private PhotonView view;
 
+    private float _zAxisStart;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        _zAxisStart = transform.localPosition.z;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        float currentX = transform.localPosition.x;
+        float currentY = transform.localPosition.y;
+        transform.localPosition = new Vector3(currentX, currentY, _zAxisStart);
+    }
+
     public void OnFigureMoved(LeanFinger leanFinger)
     {
         Debug.Log("OnFigureMoved called..");
