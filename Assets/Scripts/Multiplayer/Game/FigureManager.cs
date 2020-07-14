@@ -32,9 +32,10 @@ public class FigureManager : MonoBehaviour
     {
         if (IsActionAllowed())
         {
+            Debug.LogWarning(gameObject.name);
             Debug.Log("OnFigureMoved called..");
             Vector3 position = gameObject.transform.position;
-            _view.RPC("MoveFigureToNewPosition", RpcTarget.Others, position);
+            _view.RPC("MoveFigureToNewPosition", RpcTarget.All, position);
         }
     }
 
@@ -49,7 +50,7 @@ public class FigureManager : MonoBehaviour
 
     public void OnFigureSelect(LeanFinger finger)
     {
-        if (IsActionAllowed())
+        if (!IsActionAllowed())
         {
             _selectable.Deselect();
         }
@@ -57,6 +58,6 @@ public class FigureManager : MonoBehaviour
 
     public bool IsActionAllowed()
     {
-        return (!_gameManager.IsMyTurn() || !_view.IsMine);
+        return (_gameManager.IsMyTurn() && _view.IsMine);
     }
 }
