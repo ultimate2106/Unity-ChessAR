@@ -32,7 +32,6 @@ public class FigureManager : MonoBehaviour
     {
         if (IsActionAllowed())
         {
-            Debug.LogWarning(gameObject.name);
             Debug.Log("OnFigureMoved called..");
             Vector3 position = gameObject.transform.position;
             _view.RPC("MoveFigureToNewPosition", RpcTarget.All, position);

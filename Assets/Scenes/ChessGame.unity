@@ -1670,7 +1670,7 @@ MonoBehaviour:
   onSelectUp:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 150106453}
+      - m_Target: {fileID: 548045356}
         m_MethodName: OnFigureMoved
         m_Mode: 0
         m_Arguments:
@@ -3711,7 +3711,7 @@ MonoBehaviour:
   onSelectUp:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 150106453}
+      - m_Target: {fileID: 1190109961}
         m_MethodName: OnFigureMoved
         m_Mode: 0
         m_Arguments:
@@ -5761,7 +5761,7 @@ MonoBehaviour:
   onSelectUp:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 150106453}
+      - m_Target: {fileID: 1635188030}
         m_MethodName: OnFigureMoved
         m_Mode: 0
         m_Arguments:
@@ -5980,7 +5980,7 @@ MonoBehaviour:
   onSelectUp:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 150106453}
+      - m_Target: {fileID: 1679821104}
         m_MethodName: OnFigureMoved
         m_Mode: 0
         m_Arguments:
@@ -6361,7 +6361,7 @@ MonoBehaviour:
   onSelectUp:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 150106453}
+      - m_Target: {fileID: 1757058886}
         m_MethodName: OnFigureMoved
         m_Mode: 0
         m_Arguments:
