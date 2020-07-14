@@ -7,14 +7,15 @@ public class FigureManager : MonoBehaviour
     [SerializeField]
     private GameManager _gameManager;
     [SerializeField]
-    private PhotonView view;
-    [SerializeField]
     private LeanSelectable _selectable;
+
+    private PhotonView view;
 
     public void OnFigureMoved(LeanFinger leanFinger)
     {
         Debug.Log("OnFigureMoved called..");
         Vector3 position = gameObject.transform.position;
+        view = gameObject.GetComponent<PhotonView>();
         view.RPC("MoveFigureToNewPosition", RpcTarget.Others, position);
     }
 
@@ -26,7 +27,7 @@ public class FigureManager : MonoBehaviour
         gameObject.transform.position = newPosition;
     }
 
-    public void OnFigureSelect()
+    public void OnFigureSelect(LeanFinger finger)
     {
         if (!_gameManager.IsMyTurn() || !view.IsMine)
         {
