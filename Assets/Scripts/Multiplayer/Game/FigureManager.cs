@@ -49,7 +49,7 @@ public class FigureManager : MonoBehaviour
 
     public void OnFigureSelect(LeanFinger finger)
     {
-        if (IsActionAllowed())
+        if (!IsActionAllowed())
         {
             _selectable.Deselect();
         }
@@ -57,6 +57,6 @@ public class FigureManager : MonoBehaviour
 
     public bool IsActionAllowed()
     {
-        return (!_gameManager.IsMyTurn() || !_view.IsMine);
+        return (_gameManager.IsMyTurn() && _view.IsMine);
     }
 }
