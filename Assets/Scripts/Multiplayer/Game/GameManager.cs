@@ -1,6 +1,6 @@
-﻿using Lean.Touch;
+﻿using DG.Tweening;
 using Photon.Pun;
-using Photon.Realtime;
+using System.Collections;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject _blackFigures;
 
+    [SerializeField]
+    private GameObject _messageHolder;
+    [SerializeField]
+    private Text _messageText;
+
     private GameObject _player;
 
     private ChessFiguresColor _whoseTurn = ChessFiguresColor.White;
@@ -22,6 +27,7 @@ public class GameManager : MonoBehaviour
         // Init game..
         CreatePlayer();
         ManageOwnership();
+        ShowActivePlayerMsg();
     }
 
     private void CreatePlayer()
@@ -81,5 +87,37 @@ public class GameManager : MonoBehaviour
                 _whoseTurn = ChessFiguresColor.White;
                 break;
         }
+
+        ShowActivePlayerMsg();
+    }
+
+    public void ShowActivePlayerMsg()
+    {
+        if (_whoseTurn == GlobalSettings.GetPlayerColor())
+        {
+            ShowMessage("Your turn", 2f);
+        }
+        else
+        {
+            ShowMessage("Enemy turn", 2f);
+        }
+    }
+
+    public void ShowMessage(string message, float duration)
+    {
+        StartCoroutine(ShowMassageCoroutine(message, duration));
+    }
+
+    private IEnumerator ShowMassageCoroutine(string message, float duration)
+    {
+        _messageText.text = message;
+
+        _messageHolder.transform.DOScale(1f, 1.5f);
+
+        yield return new WaitForSeconds(duration);
+
+        _messageHolder.transform.DOScale(0f, 1.5f);
+
+        yield return new WaitForSeconds(1.5f);
     }
 }
