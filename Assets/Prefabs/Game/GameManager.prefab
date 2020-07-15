@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2771640314217029890}
   - component: {fileID: 2771640314217029889}
   - component: {fileID: 2771640314217029888}
-  - component: {fileID: 2771640314217029891}
+  - component: {fileID: 7432277317601716801}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -96,7 +96,7 @@ MonoBehaviour:
   onWorld:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2771640314217029891
+--- !u!114 &7432277317601716801
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,3 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _whiteFigures: {fileID: 0}
   _blackFigures: {fileID: 0}
+  _messageHolder: {fileID: 0}
+  _messageText: {fileID: 0}
+  _minXY: -0.028
+  _maxXY: 0.028

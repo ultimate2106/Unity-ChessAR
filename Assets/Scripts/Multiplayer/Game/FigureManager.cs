@@ -12,29 +12,43 @@ public class FigureManager : MonoBehaviour
     private PhotonView _view;
 
     private float _zAxisStart;
+    private Vector3 _currentPosition;
+    private Vector3 _lastPosition;
+
 
     // Start is called before the first frame update
     void Start()
     {
         _view = gameObject.GetComponent<PhotonView>();
         _zAxisStart = transform.localPosition.z;
+        _currentPosition = transform.localPosition;
+        _lastPosition = transform.localPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float currentX = transform.localPosition.x;
-        float currentY = transform.localPosition.y;
-        transform.localPosition = new Vector3(currentX, currentY, _zAxisStart);
+        // TODO: Try to move this to Lean Drag Translate!
+        _currentPosition.x = transform.localPosition.x;
+        _currentPosition.y = transform.localPosition.y;
+
+        // TODO: Execute only if the current position has changed
+        transform.localPosition = _currentPosition;
     }
 
     public void OnFigureMoved(LeanFinger leanFinger)
     {
         if (IsActionAllowed())
         {
-            Debug.Log("OnFigureMoved called..");
-            Vector3 position = gameObject.transform.position;
-            _view.RPC("MoveFigureToNewPosition", RpcTarget.All, position);
+            Vector3 position = gameObject.transform.localPosition;
+            if((position.x > _gameManager.MaxXY || position.x < _gameManager.MinXY) || 
+                position.y > _gameManager.MaxXY || position.y < _gameManager.MinXY) {
+                transform.localPosition = _lastPosition;
+            } else
+            {
+                _lastPosition = transform.localPosition;
+                _view.RPC("MoveFigureToNewPosition", RpcTarget.All, position);
+            }
         }
     }
 
@@ -43,7 +57,7 @@ public class FigureManager : MonoBehaviour
     public void MoveFigureToNewPosition(Vector3 newPosition)
     {
         Debug.Log("New position: " + newPosition.x + ", " + newPosition.y);
-        gameObject.transform.position = newPosition;
+        gameObject.transform.localPosition = newPosition;
         _gameManager.EndTurn();
     }
 

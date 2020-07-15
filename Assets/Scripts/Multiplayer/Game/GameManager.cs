@@ -21,6 +21,14 @@ public class GameManager : MonoBehaviour
 
     private ChessFiguresColor _whoseTurn = ChessFiguresColor.White;
 
+    [SerializeField]
+    private float _minXY = -0.028f;
+    [SerializeField]
+    private float _maxXY = 0.028f;
+
+    public float MinXY { get => _minXY; }
+    public float MaxXY { get => _maxXY; }
+
     // Start is called before the first frame update
     void Start()
     {
