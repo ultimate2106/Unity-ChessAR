@@ -281,6 +281,8 @@ namespace Photon.Pun
             if (resetOwner)
                 ResetOwnership();
 
+            ownershipCacheIsValid = OwnershipCacheState.Invalid;
+
             // Reset the delta check to force a complete update of owned objects, to ensure joining connections get full updates.
             lastOnSerializeDataSent = null;
         }

@@ -64,7 +64,7 @@ namespace Photon.Pun
     public static partial class PhotonNetwork
     {
         /// <summary>Version number of PUN. Used in the AppVersion, which separates your playerbase in matchmaking.</summary>
-        public const string PunVersion = "2.19.2";
+        public const string PunVersion = "2.19.3";
 
         /// <summary>Version number of your game. Setting this updates the AppVersion, which separates your playerbase in matchmaking.</summary>
         /// <remarks>
@@ -2501,7 +2501,7 @@ namespace Photon.Pun
                 view.InstantiationId = parameters.viewIDs[0];
                 view.isRuntimeInstantiated = true;
                 view.InstantiationData = parameters.data;
-                view.SetOwnerInternal(parameters.creator, parameters.creator.ActorNumber);
+                view.ownershipCacheIsValid = PhotonView.OwnershipCacheState.Invalid;
                 view.didAwake = true;
                 view.ViewID = parameters.viewIDs[i];    // with didAwake true and viewID == 0, this will also register the view
 
