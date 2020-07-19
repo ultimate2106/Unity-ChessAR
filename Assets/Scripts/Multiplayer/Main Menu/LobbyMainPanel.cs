@@ -11,6 +11,7 @@ using UnityEngine.UI;
         public GameObject LoginPanel;
 
         public InputField PlayerNameInput;
+        public GameObject ErrorPanel;
 
         [Header("Selection Panel")]
         public GameObject SelectionPanel;
@@ -109,10 +110,10 @@ using UnityEngine.UI;
                 entry.GetComponent<PlayerListEntry>().Initialize(p.ActorNumber, p.NickName);
 
                 object isPlayerReady;
-              //  if (p.CustomProperties.TryGetValue(AsteroidsGame.PLAYER_READY, out isPlayerReady))
-                //{
-               //    entry.GetComponent<PlayerListEntry>().SetPlayerReady((bool)isPlayerReady);
-               // }
+              if (p.CustomProperties.TryGetValue(TestStartScript.PLAYER_READY, out isPlayerReady))
+              {
+                 entry.GetComponent<PlayerListEntry>().SetPlayerReady((bool)isPlayerReady);
+              }
 
                 playerListEntries.Add(p.ActorNumber, entry);
             }
@@ -121,7 +122,7 @@ using UnityEngine.UI;
 
             Hashtable props = new Hashtable
             {
-             //   {AsteroidsGame.PLAYER_LOADED_LEVEL, false}
+                {TestStartScript.PLAYER_LOADED_LEVEL, false}
             };
             PhotonNetwork.LocalPlayer.SetCustomProperties(props);
         }
@@ -178,10 +179,10 @@ using UnityEngine.UI;
             if (playerListEntries.TryGetValue(targetPlayer.ActorNumber, out entry))
             {
                 object isPlayerReady;
-            //  if (changedProps.TryGetValue(AsteroidsGame.PLAYER_READY, out isPlayerReady))
-            //  {
-           //       entry.GetComponent<PlayerListEntry>().SetPlayerReady((bool)isPlayerReady);
-           //   }
+            if (changedProps.TryGetValue(TestStartScript.PLAYER_READY, out isPlayerReady))
+            {
+                entry.GetComponent<PlayerListEntry>().SetPlayerReady((bool)isPlayerReady);
+            }
             }
 
             StartGameButton.gameObject.SetActive(CheckPlayersReady());
@@ -232,6 +233,8 @@ using UnityEngine.UI;
             else
             {
                 Debug.LogError("Player Name is invalid.");
+                ErrorPanel.SetActive(true);
+
             }
         }
 
@@ -250,12 +253,17 @@ using UnityEngine.UI;
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.CurrentRoom.IsVisible = false;
 
-            //PhotonNetwork.LoadLevel("DemoAsteroids-GameScene");
+            PhotonNetwork.LoadLevel("ChessGame");
         }
+    public void OnErrorButtonCklicked()
+    {
+        ErrorPanel.SetActive(false);
+    }
 
-        #endregion
 
-        private bool CheckPlayersReady()
+    #endregion
+
+    private bool CheckPlayersReady()
         {
             if (!PhotonNetwork.IsMasterClient)
             {
@@ -265,14 +273,14 @@ using UnityEngine.UI;
             foreach (Player p in PhotonNetwork.PlayerList)
             {
                 object isPlayerReady;
-          //  if (p.CustomProperties.TryGetValue(AsteroidsGame.PLAYER_READY, out isPlayerReady))
-          //  {
-          //      if (!(bool)isPlayerReady)
-          //      {
-          //          return false;
-          //      }
-          //  }
-          //  else
+            if (p.CustomProperties.TryGetValue(TestStartScript.PLAYER_READY, out isPlayerReady))
+            {
+                if (!(bool)isPlayerReady)
+                {
+                    return false;
+                }
+            }
+            else
             {
               return false;
             }
