@@ -14,7 +14,9 @@ public class FigureManager : MonoBehaviour
     private float _zAxisStart;
     private Vector3 _currentPosition;
     private Vector3 _lastPosition;
+    private GameObject _lastEnteredField;
 
+    public GameObject LastEnteredField { get => _lastEnteredField; set => _lastEnteredField = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -46,8 +48,8 @@ public class FigureManager : MonoBehaviour
                 transform.localPosition = _lastPosition;
             } else
             {
-                _lastPosition = transform.localPosition;
-                _view.RPC("MoveFigureToNewPosition", RpcTarget.All, position);
+                _lastPosition = _lastEnteredField.transform.localPosition;
+                _view.RPC("MoveFigureToNewPosition", RpcTarget.All, _lastPosition);
             }
         }
     }

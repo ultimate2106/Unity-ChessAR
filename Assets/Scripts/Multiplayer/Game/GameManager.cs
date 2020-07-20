@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using Photon.Pun;
 using System.Collections;
+using System.ComponentModel;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,6 +27,16 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float _maxXY = 0.028f;
 
+    [SerializeField]
+    private float _fieldDistance = 0.00745f;
+    [SerializeField]
+    private Vector3 _firstField = new Vector3(-0.0263f, 0.00263f, 0.0456f);
+    [SerializeField]
+    private GameObject _chessFieldPrefab;
+    [SerializeField]
+    private GameObject _chessFieldsHolder;
+
+
     public float MinXY { get => _minXY; }
     public float MaxXY { get => _maxXY; }
 
@@ -34,8 +45,9 @@ public class GameManager : MonoBehaviour
     {
         // Init game..
         CreatePlayer();
+        InitChessfields();
         ManageOwnership();
-        ShowActivePlayerMsg();
+        ShowActivePlayerMsg();        
     }
 
     private void CreatePlayer()
@@ -127,5 +139,23 @@ public class GameManager : MonoBehaviour
         _messageHolder.transform.DOScale(0f, 1.5f);
 
         yield return new WaitForSeconds(1.5f);
+    }
+
+    //Creating and placing the chessfields(with Colliders) at the desired positions
+    private void InitChessfields()
+    {
+        float x = _firstField.x;
+        float y = _firstField.y;
+        for (int i = 0; i < 8; i++)
+        {
+            y = _firstField.y - _fieldDistance * i;
+            for(int j = 0; j < 8; j++)
+            {
+                x = _firstField.x + _fieldDistance * j;
+                GameObject go = Instantiate(_chessFieldPrefab, _chessFieldsHolder.transform);
+                go.transform.localPosition = new Vector3(x, y, _firstField.z);
+            }
+            
+        }
     }
 }
