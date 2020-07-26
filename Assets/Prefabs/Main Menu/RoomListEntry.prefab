@@ -198,7 +198,7 @@ MonoBehaviour:
     m_Bottom: 10
   m_ChildAlignment: 3
   m_Spacing: 10
-  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
@@ -336,7 +336,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.3882353, g: 0.4509804, b: 0.6039216, a: 1}
+    m_NormalColor: {r: 0.7176471, g: 0.5647059, b: 0.0627451, a: 1}
     m_HighlightedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -444,7 +444,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 495c9e2a934bcc640a8d7427b13cb680, type: 3}
+    m_Font: {fileID: 12800000, guid: 4a4df204c321f9c40b0dbfb1baaffb4c, type: 3}
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0

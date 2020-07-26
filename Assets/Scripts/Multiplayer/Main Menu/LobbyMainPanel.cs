@@ -84,14 +84,6 @@ using UnityEngine.UI;
             SetActivePanel(SelectionPanel.name);
         }
 
-        public override void OnJoinRandomFailed(short returnCode, string message)
-        {
-            string roomName = "Room " + Random.Range(1000, 10000);
-
-            RoomOptions options = new RoomOptions { MaxPlayers = 8 };
-
-            PhotonNetwork.CreateRoom(roomName, options, null);
-        }
 
         public override void OnJoinedRoom()
         {
@@ -138,7 +130,7 @@ using UnityEngine.UI;
 
             playerListEntries.Clear();
             playerListEntries = null;
-        }
+        }             
 
         public override void OnPlayerEnteredRoom(Player newPlayer)
         {
@@ -206,15 +198,29 @@ using UnityEngine.UI;
         {
             string roomName = RoomNameInputField.text;
             roomName = (roomName.Equals(string.Empty)) ? "Room " + Random.Range(1000, 10000) : roomName;
+            if (roomName == "") 
+            {   
+                Debug.Log("Raum Name ist nicht eingetragen");
+            }
+            else 
+            {
+                byte maxPlayers;
+                byte.TryParse(MaxPlayersInputField.text, out maxPlayers);
+                maxPlayers = (byte)Mathf.Clamp(maxPlayers, 2, 2);
 
-        //byte maxPlayers;
-            //byte.TryParse(MaxPlayersInputField.text, out maxPlayers);
-            //maxPlayers = (byte)Mathf.Clamp(maxPlayers, 2, 8);
+                RoomOptions options = new RoomOptions { MaxPlayers = maxPlayers, PlayerTtl = 10000 };
 
-            RoomOptions options = new RoomOptions { MaxPlayers = 2, PlayerTtl = 10000 };
+                PhotonNetwork.CreateRoom(roomName, options, null);
+            }
 
-            PhotonNetwork.CreateRoom(roomName, options, null);
-        }
+            //byte maxPlayers;
+           // byte.TryParse(MaxPlayersInputField.text, out maxPlayers);
+           // maxPlayers = (byte)Mathf.Clamp(maxPlayers, 2, 2);
+
+           // RoomOptions options = new RoomOptions { MaxPlayers = maxPlayers, PlayerTtl = 10000 };
+
+           // PhotonNetwork.CreateRoom(roomName, options, null);
+        }  
 
         public void OnLeaveGameButtonClicked()
         {

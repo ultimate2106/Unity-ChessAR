@@ -29,5 +29,14 @@ using UnityEngine.UI;
 
             RoomNameText.text = name;
             RoomPlayersText.text = currentPlayers + " / " + maxPlayers;
+
+        if (currentPlayers == 2)
+        {
+            JoinRoomButton.interactable = false;
+        }
+        else 
+        {
+            JoinRoomButton.interactable = true;
+        }
         }
     }
