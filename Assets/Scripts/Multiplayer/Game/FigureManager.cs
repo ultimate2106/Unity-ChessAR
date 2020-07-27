@@ -49,11 +49,10 @@ public class FigureManager : MonoBehaviour
                 transform.localPosition = _lastPosition;
             } else
             {
-                ChessFieldManager leField = _lastEnteredField.GetComponent<ChessFieldManager>();
-                if (leField.IsMoveAllowed())
+                if (_lastEnteredField.GetComponent<ChessFieldManager>().PlaceFigure(gameObject))
                 {
                     _lastPosition = _lastEnteredField.transform.localPosition;
-                    _view.RPC("MoveFigureToNewPosition", RpcTarget.All, _lastPosition, leField);
+                    _view.RPC("MoveFigureToNewPosition", RpcTarget.All, _lastPosition);
                 } else
                 {
                     transform.localPosition = _lastPosition;
@@ -64,9 +63,9 @@ public class FigureManager : MonoBehaviour
 
     // Test if private is possible
     [PunRPC]
-    public void MoveFigureToNewPosition(Vector3 newPosition, ChessFieldManager leField)
+    public void MoveFigureToNewPosition(Vector3 newPosition)
     {
-        leField.PlaceFigure(gameObject);
+        //_lastEnteredField.GetComponent<ChessFieldManager>().PlaceFigure(gameObject);
         gameObject.transform.localPosition = newPosition;
         _gameManager.EndTurn();
     }
