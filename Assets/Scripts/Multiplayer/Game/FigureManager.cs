@@ -1,5 +1,6 @@
 ﻿using Lean.Touch;
 using Photon.Pun;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class FigureManager : MonoBehaviour
@@ -48,10 +49,11 @@ public class FigureManager : MonoBehaviour
                 transform.localPosition = _lastPosition;
             } else
             {
-                if (_lastEnteredField.GetComponent<ChessFieldManager>().PlaceFigure(gameObject))
+                ChessFieldManager leField = _lastEnteredField.GetComponent<ChessFieldManager>();
+                if (leField.IsMoveAllowed())
                 {
                     _lastPosition = _lastEnteredField.transform.localPosition;
-                    _view.RPC("MoveFigureToNewPosition", RpcTarget.All, _lastPosition);
+                    _view.RPC("MoveFigureToNewPosition", RpcTarget.All, _lastPosition, leField);
                 } else
                 {
                     transform.localPosition = _lastPosition;
@@ -62,9 +64,9 @@ public class FigureManager : MonoBehaviour
 
     // Test if private is possible
     [PunRPC]
-    public void MoveFigureToNewPosition(Vector3 newPosition)
+    public void MoveFigureToNewPosition(Vector3 newPosition, ChessFieldManager leField)
     {
-        Debug.Log("New position: " + newPosition.x + ", " + newPosition.y);
+        leField.PlaceFigure(gameObject);
         gameObject.transform.localPosition = newPosition;
         _gameManager.EndTurn();
     }

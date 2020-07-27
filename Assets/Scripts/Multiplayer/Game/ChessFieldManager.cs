@@ -28,7 +28,7 @@ public class ChessFieldManager : MonoBehaviour
         other.gameObject.GetComponent<FigureManager>().LastEnteredField = gameObject;
     }
 
-    private bool IsMoveAllowed()
+    public bool IsMoveAllowed()
     {
         if(CurrentFigure != null)
         {
