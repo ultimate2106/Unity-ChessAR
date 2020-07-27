@@ -8,24 +8,43 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    #region Figures and FiguresHolder (Player)
     [SerializeField]
     private GameObject _whitePlayer;
     [SerializeField]
     private GameObject _blackPlayer;
 
     [SerializeField]
+    private GameObject[] _whiteFigures;
+    [SerializeField]
+    private GameObject[] _blackFigures;
+
+    #endregion
+
+    #region Turn System
+
+    #region Message
+
+    [SerializeField]
     private GameObject _messageHolder;
     [SerializeField]
     private Text _messageText;
 
-    private GameObject _player;
-
+    #endregion
     private ChessFiguresColor _whoseTurn = ChessFiguresColor.White;
+
+    #endregion
+
+    #region Boardbounds
 
     [SerializeField]
     private float _minXY = -0.028f;
     [SerializeField]
     private float _maxXY = 0.028f;
+
+    #endregion
+
+    #region Chessfield organization
 
     [SerializeField]
     private float _fieldDistance = 0.00745f;
@@ -33,16 +52,20 @@ public class GameManager : MonoBehaviour
     private Vector3 _firstField = new Vector3(-0.0263f, 0.0263f, 0.0456f);
     [SerializeField]
     private GameObject _chessFieldPrefab;
+
+    #endregion
+
     [SerializeField]
     private GameObject _board;
 
-    [SerializeField]
-    private GameObject[] _whiteFigures;
-    [SerializeField]
-    private GameObject[] _blackFigures;
+    private GameObject _player;
+
+    #region Properties
 
     public float MinXY { get => _minXY; }
     public float MaxXY { get => _maxXY; }
+
+    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -56,9 +79,10 @@ public class GameManager : MonoBehaviour
 
     private void CreatePlayer()
     {
-        Debug.Log("Creating Player..");
         _player = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PhotonPlayer"), Vector3.zero, Quaternion.identity);
     }
+
+    #region Ownership Handling Methods
 
     private void ManageOwnership()
     {
@@ -81,13 +105,16 @@ public class GameManager : MonoBehaviour
     //TODO: Eventuell lieber ein RequestOwnership
     private void GetOwnership(PhotonView[] figureViews)
     {
-        Debug.Log("Get Ownership of " + GlobalSettings.GetPlayerColor() + "..");
         PhotonView playerView = _player.GetComponent<PhotonView>();
         foreach (PhotonView view in figureViews)
         {
             view.TransferOwnership(playerView.Owner);
         }
     }
+    
+    #endregion
+
+    #region Turnsystem Methods
 
     public bool IsMyTurn()
     {
@@ -144,6 +171,10 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
     }
+
+    #endregion
+
+    #region Init Methods
 
     //Creating and placing the chessfields(with Colliders) at the desired positions
     private void InitChessfields()
@@ -294,4 +325,6 @@ public class GameManager : MonoBehaviour
         figure.GetComponent<FigureManager>().LastEnteredField = field;
         field.GetComponent<ChessFieldManager>().CurrentFigure = figure;
     }
+
+    #endregion
 }

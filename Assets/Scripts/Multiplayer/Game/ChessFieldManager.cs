@@ -10,23 +10,16 @@ public class ChessFieldManager : MonoBehaviour
 
     public GameObject CurrentFigure { get => _currentFigure; set => _currentFigure = value; }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    #region Trigger Event Methods
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Position after Trigger: " + gameObject.transform.position + " LocalPos: " + gameObject.transform.localPosition);
         other.gameObject.GetComponent<FigureManager>().LastEnteredField = gameObject;
     }
+
+    #endregion
+
+    #region Placing a figure
 
     public bool IsMoveAllowed()
     {
@@ -40,17 +33,15 @@ public class ChessFieldManager : MonoBehaviour
         return true;
     }
 
-    public bool PlaceFigure(GameObject newFigure)
+    public void PlaceFigure(GameObject newFigure)
     {
-        if (IsMoveAllowed())
+        if (CurrentFigure != null)
         {
-            if (CurrentFigure != null)
-            {
-                Destroy(CurrentFigure);
-            }
-            CurrentFigure = newFigure;
-            return true;
+            Destroy(CurrentFigure);
         }
-        return false;
+
+        CurrentFigure = newFigure;
     }
+
+    #endregion
 }

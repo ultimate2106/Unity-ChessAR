@@ -16,9 +16,9 @@ public class FigureManager : MonoBehaviour
     private Vector3 _currentPosition;
     private Vector3 _lastPosition;
     private GameObject _lastEnteredField;
-
     public GameObject LastEnteredField { get => _lastEnteredField; set => _lastEnteredField = value; }
 
+    #region MonoBehaviour Methods
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +39,8 @@ public class FigureManager : MonoBehaviour
         transform.localPosition = _currentPosition;
     }
 
+    #endregion
+
     public void OnFigureMoved(LeanFinger leanFinger)
     {
         if (IsActionAllowed()) 
@@ -49,10 +51,11 @@ public class FigureManager : MonoBehaviour
                 transform.localPosition = _lastPosition;
             } else
             {
-                if (_lastEnteredField.GetComponent<ChessFieldManager>().PlaceFigure(gameObject))
+                ChessFieldManager cfm = _lastEnteredField.GetComponent<ChessFieldManager>();
+                if (cfm.IsMoveAllowed())
                 {
                     _lastPosition = _lastEnteredField.transform.localPosition;
-                    _view.RPC("MoveFigureToNewPosition", RpcTarget.All, _lastPosition);
+                    _view.RPC("MoveFigureToNewPosition", RpcTarget.All, _lastPosition, _lastEnteredField.name);
                 } else
                 {
                     transform.localPosition = _lastPosition;
@@ -63,9 +66,10 @@ public class FigureManager : MonoBehaviour
 
     // Test if private is possible
     [PunRPC]
-    public void MoveFigureToNewPosition(Vector3 newPosition)
+    public void MoveFigureToNewPosition(Vector3 newPosition, string fieldName)
     {
-        //_lastEnteredField.GetComponent<ChessFieldManager>().PlaceFigure(gameObject);
+        ChessFieldManager cfm = GameObject.Find(fieldName).GetComponent<ChessFieldManager>();
+        cfm.PlaceFigure(gameObject);
         gameObject.transform.localPosition = newPosition;
         _gameManager.EndTurn();
     }
