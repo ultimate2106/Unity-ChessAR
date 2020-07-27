@@ -8,6 +8,8 @@ public class ChessFieldManager : MonoBehaviour
     [SerializeField]
     private GameObject _currentFigure;
 
+    public GameObject CurrentFigure { get => _currentFigure; set => _currentFigure = value; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,9 +30,9 @@ public class ChessFieldManager : MonoBehaviour
 
     private bool IsMoveAllowed()
     {
-        if(_currentFigure != null)
+        if(CurrentFigure != null)
         {
-            if (_currentFigure.GetPhotonView().IsMine)
+            if (CurrentFigure.GetPhotonView().IsMine)
             {
                 return false;
             }
@@ -42,11 +44,11 @@ public class ChessFieldManager : MonoBehaviour
     {
         if (IsMoveAllowed())
         {
-            if (_currentFigure != null)
+            if (CurrentFigure != null)
             {
-                Destroy(_currentFigure);
+                Destroy(CurrentFigure);
             }
-            _currentFigure = newFigure;
+            CurrentFigure = newFigure;
             return true;
         }
         return false;

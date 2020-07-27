@@ -9,9 +9,9 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject _whiteFigures;
+    private GameObject _whitePlayer;
     [SerializeField]
-    private GameObject _blackFigures;
+    private GameObject _blackPlayer;
 
     [SerializeField]
     private GameObject _messageHolder;
@@ -66,11 +66,11 @@ public class GameManager : MonoBehaviour
             
             if (myColor == ChessFiguresColor.White)
             {
-                PhotonView[] figureViews = _whiteFigures.GetComponentsInChildren<PhotonView>();
+                PhotonView[] figureViews = _whitePlayer.GetComponentsInChildren<PhotonView>();
                 GetOwnership(figureViews);
             } else
             {
-                PhotonView[] figureViews = _blackFigures.GetComponentsInChildren<PhotonView>();
+                PhotonView[] figureViews = _blackPlayer.GetComponentsInChildren<PhotonView>();
                 GetOwnership(figureViews);
             }
         }
