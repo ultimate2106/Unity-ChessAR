@@ -40,7 +40,7 @@ public class FigureManager : MonoBehaviour
 
     public void OnFigureMoved(LeanFinger leanFinger)
     {
-        if (IsActionAllowed())
+        if (IsActionAllowed()) 
         {
             Vector3 position = gameObject.transform.localPosition;
             if((position.x > _gameManager.MaxXY || position.x < _gameManager.MinXY) || 
@@ -48,8 +48,14 @@ public class FigureManager : MonoBehaviour
                 transform.localPosition = _lastPosition;
             } else
             {
-                _lastPosition = _lastEnteredField.transform.localPosition;
-                _view.RPC("MoveFigureToNewPosition", RpcTarget.All, _lastPosition);
+                if (_lastEnteredField.GetComponent<ChessFieldManager>().PlaceFigure(gameObject))
+                {
+                    _lastPosition = _lastEnteredField.transform.localPosition;
+                    _view.RPC("MoveFigureToNewPosition", RpcTarget.All, _lastPosition);
+                } else
+                {
+                    transform.localPosition = _lastPosition;
+                }
             }
         }
     }

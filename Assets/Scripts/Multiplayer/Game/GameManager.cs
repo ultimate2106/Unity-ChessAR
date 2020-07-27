@@ -30,12 +30,14 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float _fieldDistance = 0.00745f;
     [SerializeField]
-    private Vector3 _firstField = new Vector3(-0.0263f, 0.00263f, 0.0456f);
+    private Vector3 _firstField = new Vector3(-0.0263f, 0.0263f, 0.0456f);
     [SerializeField]
     private GameObject _chessFieldPrefab;
     [SerializeField]
-    private GameObject _chessFieldsHolder;
+    private GameObject _board;
 
+    [SerializeField]
+    private GameObject[] _whitePrefabs;
 
     public float MinXY { get => _minXY; }
     public float MaxXY { get => _maxXY; }
@@ -61,7 +63,7 @@ public class GameManager : MonoBehaviour
         if(GlobalSettings.GetPlayerId() != 0)
         {
             ChessFiguresColor myColor = GlobalSettings.GetPlayerColor();
-
+            
             if (myColor == ChessFiguresColor.White)
             {
                 PhotonView[] figureViews = _whiteFigures.GetComponentsInChildren<PhotonView>();
@@ -152,7 +154,7 @@ public class GameManager : MonoBehaviour
             for(int j = 0; j < 8; j++)
             {
                 x = _firstField.x + _fieldDistance * j;
-                GameObject go = Instantiate(_chessFieldPrefab, _chessFieldsHolder.transform);
+                GameObject go = Instantiate(_chessFieldPrefab, _board.transform);
                 go.transform.localPosition = new Vector3(x, y, _firstField.z);
             }
             
