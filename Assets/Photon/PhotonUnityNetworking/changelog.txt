@@ -3,6 +3,8 @@ PUN 2 Change Log
 Exit Games GmbH - www.photonengine.com - forum.photonengine.com
 
 
+v2.19.3 (06. July 2020)
+Fixed: An issue with ownership, which was introduced in v2.19.2.
 v2.19.2 (02. July 2020)
 Fixed: Wasn't setting owner in NetworkInstantiate, which was causing a failure to reset old owner values on second room join.
 

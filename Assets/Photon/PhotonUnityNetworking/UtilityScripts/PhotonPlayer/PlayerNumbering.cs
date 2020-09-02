@@ -186,8 +186,8 @@ namespace Photon.Pun.UtilityScripts
                 }
             }
 
-            //Debug.Log(allPlayers);
-            //Debug.Log(PhotonNetwork.LocalPlayer.ToStringFull() + " has PhotonNetwork.player.GetPlayerNumber(): " + PhotonNetwork.LocalPlayer.GetPlayerNumber());
+            Debug.Log(allPlayers);
+            Debug.Log(PhotonNetwork.LocalPlayer.ToStringFull() + " has PhotonNetwork.player.GetPlayerNumber(): " + PhotonNetwork.LocalPlayer.GetPlayerNumber());
 
             SortedPlayers = PhotonNetwork.CurrentRoom.Players.Values.OrderBy((p) => p.GetPlayerNumber()).ToArray();
             if (OnPlayerNumberingChanged != null)
