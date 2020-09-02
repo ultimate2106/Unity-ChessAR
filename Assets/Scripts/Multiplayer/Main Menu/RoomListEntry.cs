@@ -19,6 +19,8 @@ using UnityEngine.UI;
                     PhotonNetwork.LeaveLobby();
                 }
 
+                GlobalSettings.SetPlayerId(false);
+
                 PhotonNetwork.JoinRoom(roomName);
             });
         }

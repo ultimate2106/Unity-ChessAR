@@ -208,8 +208,10 @@ using UnityEngine.UI;
                 byte.TryParse(MaxPlayersInputField.text, out maxPlayers);
                 maxPlayers = (byte)Mathf.Clamp(maxPlayers, 2, 2);
 
-                RoomOptions options = new RoomOptions { MaxPlayers = maxPlayers, PlayerTtl = 10000 };
+                GlobalSettings.SetPlayerId(true);
 
+                RoomOptions options = new RoomOptions { MaxPlayers = maxPlayers, PlayerTtl = 10000 };
+                
                 PhotonNetwork.CreateRoom(roomName, options, null);
             }
 
@@ -258,6 +260,8 @@ using UnityEngine.UI;
         {
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.CurrentRoom.IsVisible = false;
+
+            GlobalSettings.InitGame();
 
             PhotonNetwork.LoadLevel("ChessGame");
         }

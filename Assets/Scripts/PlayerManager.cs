@@ -15,8 +15,5 @@ public class PlayerManager : MonoBehaviour
         {
             GlobalSettings.SetPlayerColors(ChessFiguresColor.Black, ChessFiguresColor.White);
         }
-
-        Text yourColor = GameObject.Find("YourColor").GetComponent<Text>();
-        yourColor.text = "Deine Farbe ist: " + GlobalSettings.GetPlayerColor().ToString();
     }
 }
