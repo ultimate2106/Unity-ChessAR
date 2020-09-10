@@ -19,6 +19,21 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject[] _blackFigures;
 
+    #region Figuretype Z-Axis Values
+    [SerializeField]
+    private float _ZAxisPawn;
+    [SerializeField]
+    private float _ZAxisRook;
+    [SerializeField]
+    private float _ZAxisKnight;
+    [SerializeField]
+    private float _ZAxisBishop;
+    [SerializeField]
+    private float _ZAxisKing;
+    [SerializeField]
+    private float _ZAxisQueen;
+    #endregion
+
     #endregion
 
     #region Turn System
@@ -202,60 +217,60 @@ public class GameManager : MonoBehaviour
         {
             case "00":
                 //Rook  white  8
-                ConnectFigureToField(_whiteFigures[8], field);
+                ConnectFigureToField(_whiteFigures[8], field, _ZAxisRook);
                 break;
             case "07":
                 //Rook  white  9
-                ConnectFigureToField(_whiteFigures[9], field);
+                ConnectFigureToField(_whiteFigures[9], field, _ZAxisRook);
                 break;
             case "01":
                 //Knight white 10
-                ConnectFigureToField(_whiteFigures[10], field);
+                ConnectFigureToField(_whiteFigures[10], field, _ZAxisKnight);
                 break;
             case "06":
                 //Knight white 11
-                ConnectFigureToField(_whiteFigures[11], field);
+                ConnectFigureToField(_whiteFigures[11], field, _ZAxisKnight);
                 break;
             case "02":
                 //Bishop white 12
-                ConnectFigureToField(_whiteFigures[12], field);
+                ConnectFigureToField(_whiteFigures[12], field, _ZAxisBishop);
                 break;
             case "05":
                 //Bishop white 13
-                ConnectFigureToField(_whiteFigures[13], field);
+                ConnectFigureToField(_whiteFigures[13], field, _ZAxisBishop);
                 break;
             case "03":
                 //king white 14
-                ConnectFigureToField(_whiteFigures[14], field);
+                ConnectFigureToField(_whiteFigures[14], field, _ZAxisKing);
                 break;
             case "04":
                 //queen white 15
-                ConnectFigureToField(_whiteFigures[15], field);
+                ConnectFigureToField(_whiteFigures[15], field, _ZAxisQueen);
                 break;
             case "10":
-                ConnectFigureToField(_whiteFigures[0], field);
+                ConnectFigureToField(_whiteFigures[0], field, _ZAxisPawn);
                 break;
             case "11":
-                ConnectFigureToField(_whiteFigures[1], field);
+                ConnectFigureToField(_whiteFigures[1], field, _ZAxisPawn);
                 break;
             case "12":
-                ConnectFigureToField(_whiteFigures[2], field);
+                ConnectFigureToField(_whiteFigures[2], field, _ZAxisPawn);
                 break;
             case "13":
-                ConnectFigureToField(_whiteFigures[3], field);
+                ConnectFigureToField(_whiteFigures[3], field, _ZAxisPawn);
                 break;
             case "14":
-                ConnectFigureToField(_whiteFigures[4], field);
+                ConnectFigureToField(_whiteFigures[4], field, _ZAxisPawn);
                 break;
             case "15":
-                ConnectFigureToField(_whiteFigures[5], field);
+                ConnectFigureToField(_whiteFigures[5], field, _ZAxisPawn);
                 break;
             case "16":
-                ConnectFigureToField(_whiteFigures[6], field);
+                ConnectFigureToField(_whiteFigures[6], field, _ZAxisPawn);
                 break;
             case "17":
                 // pawns white 0
-                ConnectFigureToField(_whiteFigures[7], field);
+                ConnectFigureToField(_whiteFigures[7], field, _ZAxisPawn);
                 break;
         }
 
@@ -263,65 +278,65 @@ public class GameManager : MonoBehaviour
         switch (field.name)
         {
             case "70":
-                ConnectFigureToField(_blackFigures[8], field);
+                ConnectFigureToField(_blackFigures[8], field, _ZAxisRook);
                 break;
             case "77":
                 //Rook  black  
-                ConnectFigureToField(_blackFigures[9], field);
+                ConnectFigureToField(_blackFigures[9], field, _ZAxisRook);
                 break;
             case "71":
-                ConnectFigureToField(_blackFigures[10], field);
+                ConnectFigureToField(_blackFigures[10], field, _ZAxisKnight);
                 break;
             case "76":
                 //Knight black
-                ConnectFigureToField(_blackFigures[11], field);
+                ConnectFigureToField(_blackFigures[11], field, _ZAxisKnight);
                 break;
             case "72":
-                ConnectFigureToField(_blackFigures[12], field);
+                ConnectFigureToField(_blackFigures[12], field, _ZAxisBishop);
                 break;
             case "75":
                 //Bishop black
-                ConnectFigureToField(_blackFigures[13], field);
+                ConnectFigureToField(_blackFigures[13], field, _ZAxisBishop);
                 break;
             case "73":
                 //queen black
-                ConnectFigureToField(_blackFigures[15], field);
+                ConnectFigureToField(_blackFigures[15], field, _ZAxisQueen);
                 break;
             case "74":
                 //king black
-                ConnectFigureToField(_blackFigures[14], field);
+                ConnectFigureToField(_blackFigures[14], field, _ZAxisKing);
                 break;
             case "60":
-                ConnectFigureToField(_blackFigures[0], field);
+                ConnectFigureToField(_blackFigures[0], field, _ZAxisPawn);
                 break;
             case "61":
-                ConnectFigureToField(_blackFigures[1], field);
+                ConnectFigureToField(_blackFigures[1], field, _ZAxisPawn);
                 break;
             case "62":
-                ConnectFigureToField(_blackFigures[2], field);
+                ConnectFigureToField(_blackFigures[2], field, _ZAxisPawn);
                 break;
             case "63":
-                ConnectFigureToField(_blackFigures[3], field);
+                ConnectFigureToField(_blackFigures[3], field, _ZAxisPawn);
                 break;
             case "64":
-                ConnectFigureToField(_blackFigures[4], field);
+                ConnectFigureToField(_blackFigures[4], field, _ZAxisPawn);
                 break;
             case "65":
-                ConnectFigureToField(_blackFigures[5], field);
+                ConnectFigureToField(_blackFigures[5], field, _ZAxisPawn);
                 break;
             case "66":
-                ConnectFigureToField(_blackFigures[6], field);
+                ConnectFigureToField(_blackFigures[6], field, _ZAxisPawn);
                 break;
             case "67":
                 // pawns black
-                ConnectFigureToField(_blackFigures[7], field);
+                ConnectFigureToField(_blackFigures[7], field, _ZAxisPawn);
                 break;
         }
     }
 
-    private void ConnectFigureToField(GameObject figure, GameObject field)
+    private void ConnectFigureToField(GameObject figure, GameObject field, float zValue)
     {
-        figure.transform.localPosition = field.transform.localPosition;
+        figure.transform.localPosition = new Vector3(field.transform.localPosition.x, field.transform.localPosition.y, zValue); ;
         figure.GetComponent<FigureManager>().LastEnteredField = field;
         field.GetComponent<ChessFieldManager>().CurrentFigure = figure;
     }
