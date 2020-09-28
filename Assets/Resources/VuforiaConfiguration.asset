@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: VuforiaConfiguration
   m_EditorClassIdentifier: 
   vuforia:
-    vuforiaLicenseKey: AefMobH/////AAABmY3TCwvRnU4elbPBmXUB0pg2JOBa0UfHQtw25CYHyb+XF42rp2hf25FUsh67V3v/qlv4q7UZmV1yORQivKOFL9tdypbF0u4bIIrTbhOo45p3m73kUajA556Avy6rgBX+fJgVGFWq+ocnt+QvODt9JBLBMmsufvXQnRivC9Bz2Q5w7KClDYiyPQga0EedT/p4UkZ9yLtDtWb23ddwx1LMDKBZCL9q41tgPq5sTE3eKVCrIYfdrbqtbEDnctWFTb/Fu3cx0htynqrWdbFsRpyhE0jOmnNYl/B/YQR4whwd5LRKDeeHHqAaiAUSM/i9gHJl2MssqmNsxNLYyviqzJ1mqmP1CFZ7fGFNupZhcveUwvFo
+    vuforiaLicenseKey: AXcI9Jr/////AAABmWl27iMGOEfIt8ioabAhNIFHYOiBC1w6f3Yex1iVToCpPCImB/VIWiAqH8x+VRQYccQKrnxgEe4MePS+vE8GXWmgNDp5IwAfky/pYPg3xYO4G2jwiV3yOHmhdTZLtg5YInvD6DvPbOW6x3gTuY9+16AEXbUWmi7zNkeXM9T543Xv7rSEXTMECLNQL/+rWtMVJ742BOfaQ+G8sTCKVXPN4YY5HLL5LtybeyyCohPA/WQ71W5ND9ppdCnf9bha/kOPkHgeZAH6Up3INk7Z83nUzE9PUEEvVfaiysYB80lbntv0qYaz2SlLpinmSIFIPK/d37/q9+tg1r/9j65m0Hz7ttQ/EuEShadC1xuQ5CuRaGyt
     ufoLicenseKey: QVU2cDVXei8vLy8vQUFBQUtIaHhwZEgxcTBFbHZMY0U0YnBpbnNzY3JsdzdPdFFPTkk4Qk1ISGl5V05JNDdyZk40a05YdWpuTjRZWnZqZVJXL1ZXY0gwRC9NL29xWml6RXZ3WmVOUG1NdVZJcENnbXIzd1NKeHVERDRGd0M4aTdtelczdXVpME5hWXhHbDJFNnRJejhYcEppeGx1dWc1djYrR3RrdlJBMktDVVluWmFmMGNtTnYwUDR1T2M1emd4azNSazRNWFZCb3pFWkc2d29pOG5naWRhaE9YaWNydnBBVGYweVpkZzRMVUVNZ0ViK3BaSTZqSitlK1RVR1FuSEtrblRIZ1dhcUF2QmtkeDc2SFdYSWx0TFVJRUI1akVZenpxS0tubW93UVp5dGMvQWlTeFFaOFhuOFJveUNXam0zbDBITGs1WnhoaDJlaHBFZ2NSSDZFMWJydldaY1pNUWtIUkpoM3lGaGZCR1dySk5rWmg3dFBTeEhOb3k=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
@@ -22,9 +22,8 @@ MonoBehaviour:
     virtualSceneScaleFactor: 1
     useDelayedLoadingObjectTargets: 0
     modelTargetRecoWhileExtendedTracked: 1
-    version: 9.2.7
-    eulaAcceptedVersions: '{"Values":["8.5","9.1","9.2"]}'
-    modelTargetMode: 0
+    version: 9.4.6
+    eulaAcceptedVersions: '{"Values":["8.5","9.1","9.2","9.4"]}'
   database:
     disableModelExtraction: 0
   videoBackground:
@@ -38,6 +37,7 @@ MonoBehaviour:
     arcoreRequirement: 1
     autoImportArcore: 1
   playmode:
+    mSequencePath: 
     playModeType: 0
   webcam:
     renderTextureLayer: 30
