@@ -1,6 +1,6 @@
 ﻿using Lean.Touch;
 using Photon.Pun;
-using UnityEditor.UIElements;
+//using UnityEditor.UIElements;
 using UnityEngine;
 
 public class FigureManager : MonoBehaviour
@@ -9,6 +9,8 @@ public class FigureManager : MonoBehaviour
     private GameManager _gameManager;
     [SerializeField]
     private LeanSelectable _selectable;
+    [SerializeField]
+    private GameObject _figureInGraveyard;
 
     private PhotonView _view;
 
@@ -40,6 +42,16 @@ public class FigureManager : MonoBehaviour
     }
 
     #endregion
+    private void OnDisable()
+    {
+        _view.RPC("ToggleGraveyard", RpcTarget.All);
+    }
+
+    [PunRPC]
+    private void ToggleGraveyard() 
+    {
+        _figureInGraveyard.SetActive(true);
+    }
 
     public void OnFigureMoved(LeanFinger leanFinger)
     {
