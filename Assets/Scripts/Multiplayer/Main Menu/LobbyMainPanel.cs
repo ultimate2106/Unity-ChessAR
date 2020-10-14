@@ -67,14 +67,14 @@ using UnityEngine.UI;
             UpdateRoomListView();
         }
 
-        public override void OnLeftLobby()
-        {
-            cachedRoomList.Clear();
+    public override void OnLeftLobby()
+    {
+        cachedRoomList.Clear();
 
-            ClearRoomListView();
-        }
+        ClearRoomListView();
+    }
 
-        public override void OnCreateRoomFailed(short returnCode, string message)
+    public override void OnCreateRoomFailed(short returnCode, string message)
         {
             SetActivePanel(SelectionPanel.name);
         }
@@ -176,14 +176,19 @@ using UnityEngine.UI;
                 entry.GetComponent<PlayerListEntry>().SetPlayerReady((bool)isPlayerReady);
             }
             }
-
+        if (playerListEntries.Count == 2) 
+        {
             StartGameButton.gameObject.SetActive(CheckPlayersReady());
+        }
+
         }
 
         #endregion
 
         #region UI CALLBACKS
 
+
+    
         public void OnBackButtonClicked()
         {
             if (PhotonNetwork.InLobby)
@@ -246,17 +251,18 @@ using UnityEngine.UI;
             }
         }
 
-        public void OnRoomListButtonClicked()
-        {
-            if (!PhotonNetwork.InLobby)
-            {
-                PhotonNetwork.JoinLobby();
-            }
+    //public void OnRoomListButtonClicked()
+    //{
+    //    if (!PhotonNetwork.InLobby)
+    //    {
+    //        PhotonNetwork.JoinLobby();
+    //    }
 
-            SetActivePanel(RoomListPanel.name);
-        }
+    //    SetActivePanel(RoomListPanel.name);
+    //    //SetActivePanel(true);
+    //}
 
-        public void OnStartGameButtonClicked()
+    public void OnStartGameButtonClicked()
         {
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.CurrentRoom.IsVisible = false;
@@ -269,8 +275,6 @@ using UnityEngine.UI;
     {
         ErrorPanel.SetActive(false);
     }
-
-
     #endregion
 
     private bool CheckPlayersReady()
@@ -299,19 +303,26 @@ using UnityEngine.UI;
             return true;
         }
 
-        private void ClearRoomListView()
+    private void ClearRoomListView()
+    {
+        foreach (GameObject entry in roomListEntries.Values)
         {
-            foreach (GameObject entry in roomListEntries.Values)
-            {
-                Destroy(entry.gameObject);
-            }
-
-            roomListEntries.Clear();
+            Destroy(entry.gameObject);
         }
 
-        public void LocalPlayerPropertiesUpdated()
+        roomListEntries.Clear();
+    }
+
+
+    /// <summary>
+    /// Hier ist die Funktion um zu überprüfen ob nur eine Person in der Lobby ist 
+    /// </summary>
+    public void LocalPlayerPropertiesUpdated()
+        {
+        if (this.playerListEntries.Count == 2) 
         {
             StartGameButton.gameObject.SetActive(CheckPlayersReady());
+        }
         }
 
         private void SetActivePanel(string activePanel)
@@ -319,9 +330,17 @@ using UnityEngine.UI;
             LoginPanel.SetActive(activePanel.Equals(LoginPanel.name));
             SelectionPanel.SetActive(activePanel.Equals(SelectionPanel.name));
             CreateRoomPanel.SetActive(activePanel.Equals(CreateRoomPanel.name));
-            RoomListPanel.SetActive(activePanel.Equals(RoomListPanel.name));    // UI should call OnRoomListButtonClicked() to activate this
-            InsideRoomPanel.SetActive(activePanel.Equals(InsideRoomPanel.name));
+            RoomListPanel.SetActive(activePanel.Equals(SelectionPanel.name));    // UI should call OnRoomListButtonClicked() to activate this
+            //RoomListPanel.SetActive(true);    // UI should call OnRoomListButtonClicked() to activate this
+       
+
+        InsideRoomPanel.SetActive(activePanel.Equals(InsideRoomPanel.name));
+        if (!PhotonNetwork.InLobby)
+        {
+            PhotonNetwork.JoinLobby();
         }
+        //else SetActivePanel(RoomListPanel.name);
+    }
 
         private void UpdateCachedRoomList(List<RoomInfo> roomList)
         {
@@ -359,7 +378,6 @@ using UnityEngine.UI;
                 entry.transform.SetParent(RoomListContent.transform);
                 entry.transform.localScale = Vector3.one;
                 entry.GetComponent<RoomListEntry>().Initialize(info.Name, (byte)info.PlayerCount, info.MaxPlayers);
-
                 roomListEntries.Add(info.Name, entry);
             }
         }
